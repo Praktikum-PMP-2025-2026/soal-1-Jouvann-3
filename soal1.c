@@ -175,7 +175,7 @@ void printGerbong(Gerbong **head){
 
         for (int i=0; i<idx; i++){
             if (i == 0){
-                printf("LIST ");
+                printf("LIST %d ", list[i]);
             }
             else if (i < idx-1){
                 printf("%d ", list[i]);
