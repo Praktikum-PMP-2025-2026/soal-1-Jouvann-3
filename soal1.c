@@ -137,7 +137,7 @@ void printGerbong(Gerbong **head){
     Gerbong *temp = *head;
     idx = 0;
 
-    if (temp = NULL){
+    if (temp == NULL){
         isi = 0;
     }
     else {
@@ -148,6 +148,7 @@ void printGerbong(Gerbong **head){
         list[idx] = temp->data;
         temp = temp->next;
         idx++;
+        //printf("%d", list[idx]);
     }
     
     if (isi == 0){
@@ -155,20 +156,37 @@ void printGerbong(Gerbong **head){
     }
 
     else if (isi == 1){
-        for (int i = 0; i < idx; i++){
+        // for (int i = 0; i < idx; i++){
 
-            itoa(list[i], tempInt, 10);
-            // sprintf(tempInt, "%d", list[i]);
-            tempInt[strcspn(tempInt, "\0")] = 0;
+        //     itoa(list[i], tempInt, 10);
+        //     // sprintf(tempInt, "%d", list[i]);
+        //     tempInt[strcspn(tempInt, "\0")] = 0;
+            
+        //     if (i == 0){
+        //         strcpy(finInt, tempInt);
+        //         //printf("%s", finInt);
+        //     }
+        //     else{
+        //         strcat(finInt, tempInt);
+        //         //printf("%s", finInt);
+        //     }           
+        // }
+        
 
-            if (i = 0){
-                strcpy(finInt, tempInt);
+        for (int i=0; i<idx; i++){
+            if (i == 0){
+                printf("LIST ");
             }
-            else{
-                strcat(finInt, tempInt);
-            }           
+            else if (i < idx-1){
+                printf("%d ", list[i]);
+            }
+            else if (i == idx-1){
+                printf("%d", list[i]);
+            }
+            
         }
-        printf("LIST %s", finInt);
+        
+        //printf("LIST %s", finInt);
     }
 }
 
@@ -199,8 +217,8 @@ int main(){
         }
     }
 
-    //printGerbong(&head);
-    printf("LIST EMPTY\n");
-    
+    printGerbong(&head);
+    //printf("LIST EMPTY\n");
+
     return 0;
 }
